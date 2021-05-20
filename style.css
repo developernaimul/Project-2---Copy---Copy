@@ -1,0 +1,745 @@
+/* ========== BASIC SETUP ========== */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+}
+html{
+    scroll-behavior: smooth;
+}
+.fixdwidth{
+    max-width: 1200px;
+    margin: auto;
+}
+.clearfix::after{
+    content: "";
+    clear: both;
+    display: block;
+}
+.fleft{
+    float: left;
+}
+.fright{
+    float: right;
+}
+.text-left{
+    text-align: left;
+}
+.text-center{
+    text-align: center;
+}
+.text-right{
+    text-align: right;
+}
+a{
+    text-decoration: none;
+}
+img{
+    max-width: 100%;
+}
+
+/* ========== REUSEBLE CSS ========== */
+h2.section_title{
+    background: #fcc747;
+    color: #000;
+    font-size: 21px;
+    padding: 10px 15px;
+    display: inline-block;
+    margin-bottom: 30px;
+    font-weight: 800;
+}
+h1.section_text {
+	font-size: 24px;
+	font-weight: 500;
+	color: #1d1f33;
+	line-height: 40px;
+	margin-bottom: 30px;
+}
+
+/* ========== HEADER CSS ========== */
+header{
+    padding: 25px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: .6s;
+    z-index: 100000;
+}
+header.sticky{
+    padding: 8px 0;
+    background: #000;
+}
+header::before{
+    content: "";
+    clear: both;
+    display: block;
+}
+.header-logo{
+    width: 25%;
+    position: relative;
+}
+.header-logo a img{
+    width: 95px;
+}
+
+.header-menu{
+    width: 75%;
+    position: relative;
+}
+.header-menu ul li{
+    display: inline-block;
+    list-style: none;
+    position: relative;
+}
+.header-menu ul li i{
+    color: #fff;
+    font-size: 10px;
+    margin-left: -5px;
+    margin-right: 5px;
+}
+.header-menu ul li:hover i{
+    color: #20ab96;
+}
+.header-menu ul li a{
+    display: inline-block;
+    color: #fff;
+    padding: 0 10px;
+    text-transform: uppercase;
+    font-size: 17px;
+    line-height: 64px;
+    font-weight: 600;
+    transition: .6s;
+    position: relative;
+}
+.header-menu ul li:hover > a{
+    color: #fcc747;
+}
+/* drodown */
+.header-menu ul li{
+    position: relative;
+}
+.header-menu ul li ul {
+	position: absolute;
+	width: 180px;
+	top: 100%;
+	left: 8px;
+	text-align: left;
+    opacity: 0;
+    visibility: hidden;
+    transform: scaleY(0);
+    transform-origin: top center;
+    transition: .5s;
+}
+.header-menu ul li ul li{
+    background: #5b88b1;
+    display: block;
+}
+.header-menu ul li ul li a{
+    display: block;
+    line-height: 45px;
+    transition: .3s;
+}
+.header-menu ul li ul li:hover a{
+    letter-spacing: 2px;
+}
+.header-menu ul li:hover ul{
+    opacity: 1;
+    visibility: visible;
+    transform: scaleY(1);
+}
+
+/* ========== BANNER CSS ========== */
+.banner{
+    background: url(img/banner.jpg) no-repeat center center;
+    background-size: cover;
+    padding: 200px 0;
+    color: #fff;
+}
+.banner h1 {
+	font-size: 80px;
+	position: relative;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+.banner h1::before {
+	content: "";
+	position: absolute;
+	right: 250px;
+	bottom: -5px;
+	height: 100%;
+	width: 1px;
+	background-color: #fff;
+}
+.banner h3{
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    position: relative;
+}
+.banner h3::after {
+	content: "";
+	position: absolute;
+	left: 305px;
+	top: 50%;
+	background: #fff;
+	height: 1px;
+	width: 40px;
+    opacity: 0.7;
+}
+.banner h3::before {
+	content: "";
+	position: absolute;
+	right: 305px;
+	top: 50%;
+	background: #fff;
+	height: 1px;
+	width: 40px;
+    opacity: 0.7;
+}
+.btn-hero {
+	color: #fff;
+	border: 1px solid #fff;
+	padding: 15px 40px;
+	display: inline-block;
+	text-transform: uppercase;
+	font-weight: 600;
+	font-size: 14px;
+	word-spacing: 3px;
+	letter-spacing: 1px;
+    position: relative;
+    z-index: 1;
+}
+a.btn-hero::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #00c9e4;
+    display: inline-block;
+    z-index: -1;
+    transition: .5s;
+}
+a.btn-hero:hover::after{
+    width: 100%;
+    color: none;
+}
+/* ========== ABOUT CSS ========== */
+.about{
+    background: #fdfdfe;
+    padding: 100px 0 50px 0;
+}
+.about-img{
+    width: 45%;
+}
+.about-img img{
+    box-shadow: -15px 0px 30px 15px rgba(59, 86, 148, 0.05);
+}
+.about-desc {
+	width: 55%;
+	padding: 50px;
+	box-shadow: 15px 0px 30px 15px rgba(59, 86, 148, 0.1);
+}
+.about-desc p {
+	font-size: 18px;
+	line-height: 32px;
+	margin-bottom: 30px;
+    color: rgb(119, 119, 119);
+    font-weight: 300;
+}
+.about-info-box{
+    width: 40%;
+}
+.about-info-box ul li {
+	list-style: none;
+	font-size: 19px;
+	font-weight: 300;
+	margin-bottom: 20px;
+    color: rgb(65, 64, 64);
+}
+.about-button {
+	margin-top: 30px;
+	padding-bottom: 10px;
+}
+.submit-btn {
+	background: #3243e3;
+	padding: 15px 30px;
+	border: none;
+	color: #fff;
+	font-weight: 700;
+    transform: translateY(0);
+    transition: .3s;
+}
+.submit-btn:hover{
+    background: #000;
+    transform: translateY(-5px);
+    box-shadow: 2px 2px 20px 7px rgba(0, 0, 0, 0.5);
+}
+.arrow-down {
+	position: relative;
+	height: 70px;
+	width: 81px;
+    overflow: hidden;
+}
+.arrow-down span {
+	color: #fcc747;
+	font-size: 80px;
+	position: absolute;
+	left: -27px;
+	bottom: -10px;
+}
+/* ========== PORTFOLIN CSS ========== */
+.portfolio{
+    background: #fff;
+}
+.portfolio h2{
+    font-weight: 500;
+}
+.portfolio h1 {
+	font-size: 38px;
+	font-weight: 600;
+	line-height: 54px;
+}
+.portfolio-items-btn a {
+	color: #77798e;
+	display: inline-block;
+	padding: 10px 15px;
+	font-size: 16px;
+	margin-bottom: 20px;
+}
+.portfolio-items-btn a:first-child{
+    color: #3243e3;
+    text-decoration: line-through;
+    padding: 10px 15px 10px 0;
+}
+.portfolio-box{
+    width: 32%;
+    float: left;
+    margin-right: 2%;
+    margin-bottom: 30px;
+    position: relative;
+}
+.portfolio-box:nth-child(3){
+    margin-right: 0;
+}
+.portfolio-box:nth-child(6){
+    margin-right: 0;
+}
+.portfolio-overly{
+    position: absolute;
+    width: 100%;
+    height: 99%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 131, 217, 0.8);
+    opacity: 0;
+    cursor: pointer;
+    transition: .7s;
+}
+.portfolio-box:hover .portfolio-overly{
+    opacity: 1;
+}
+.portfolio-desc{
+    position: absolute;
+    width: 80%;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: .7s;
+}
+.portfolio-desc h3{
+    color: #fff;
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+.portfolio-desc p{
+    color: #fff;
+}
+.portfolio-box:hover .portfolio-desc{
+    bottom: 25%;
+    opacity: 1;
+}
+
+/* ========== SKILL CSS ========== */
+.skill{
+    padding: 50px;
+}
+.skill h2{
+    padding: 10px 20px;
+    font-weight: 500;
+}
+.skill h1 {
+	font-size: 38px;
+	font-weight: 600;
+	line-height: 55px;
+}
+.my-skills{
+    margin-top: 40px;
+}
+.my-skills-box{
+    width: 32%;
+    height: 228px;
+    padding: 30px;
+    margin-bottom: 40px;
+    margin-right: 2%;
+    box-shadow: 0 5px 10px 5px rgba(50, 67, 227, 0.1);
+    transform: translateY(0);
+    transition: .5s;
+}
+.my-skills-box:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 5px 10px 5px rgba(50, 67, 227, 0.3);
+}
+.my-skills-box:nth-child(3){
+    margin-right: 0;
+}
+.my-skills-box:nth-child(6){
+    margin-right: 0;
+}
+.my-skills-box img{
+    float: left;
+    width: 45px;
+    margin-right: 20px;
+    padding-bottom: 120px;
+}
+.my-skills-box h3 {
+	font-size: 20px;
+	margin-bottom: 20px;
+}
+.my-skills-box p {
+	font-size: 17px;
+	line-height: 27px;
+	color: #808090;
+	font-weight: 300;
+}
+/* ========== SKILL-BAR CSS ========== */
+.skillbar{
+    background: url(img/dot-background-png.png) no-repeat center center;
+    background-size: cover;
+    padding: 60px 0;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 50px;
+}
+.skill-overly{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: #eb106a;
+    top: 0;
+    left: 0;
+    opacity: .9;
+    z-index: -1;
+}
+.skill-pint-bar{
+    width: 23%;
+    margin-right: 2%;
+    text-align: center;
+    color: #fff;
+}
+.skill-pint-bar:last-child{
+    margin-right: 0;
+}
+.skill-pint-bar h2 {
+	font-size: 40px;
+	font-weight: 900;
+}
+.skill-pint-bar h3 {
+	font-weight: 300;
+	margin-top: 15px;
+}
+
+/* ========== EDUCATION CSS ========== */
+.education{}
+.education h1{
+    font-size: 40px;
+    line-height: 55px;
+}
+.education-desc{
+    width: 55%;
+}
+.education-box{
+    width: 100%;
+    background: #fff;
+    margin-top: 40px;
+    padding: 30px 25px;
+    box-shadow: 0 0 30px 8px rgba(31, 122, 240, 0.1);
+}
+.education-box .education-hed{
+    width: 50%;
+}
+.education-box .education-hed span{
+    background: #ec116c;
+    color: #fff;
+    padding: 5px 10px;
+    display: inline-block;
+    font-size: 14px;
+}
+.education-box .education-hed h2 {
+	font-size: 21px;
+	padding: 20px 30px 20px 0;
+	font-weight: 500;
+	color: #1d1f33;
+}
+.education-box .education-hed h3 {
+	color: #1d1f33;
+	font-weight: 300;
+	font-size: 15px;
+}
+.education-box .education-pra{
+    width: 50%;
+}
+.education-box .education-pra p{
+    font-size: 16px;
+    color: #808080;
+    line-height: 28px;
+}
+.education-img{
+    width: 40%;
+}
+
+/* ========== EMPLOYMENT CSS ========== */
+.employment{
+    background: #eff3fd;
+    padding: 100px 0;
+    margin-top: -4px;
+}
+.employment h2{
+    font-weight: 400;
+}
+.employment h1{
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 55px;
+}
+.empoyment-box{
+    margin-top: 50px;
+}
+.employment-box-item{
+    width: 32%;
+    margin-right: 2%;
+    padding: 30px;
+    background: #fff;
+    position: relative;
+}
+.employment-box-item:last-child{
+    margin-right: 0;
+}
+.employment-box-img img{
+    width: 120px;
+}
+.employment-box-item .icon {
+    height: 35px;
+    width: 35px;
+    background: #000;
+	position: absolute;
+	top: 25px;
+	right: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+.employment-box-item .icon i{
+    font-size: 25px;
+    line-height: 35px;
+    color: #fff;
+    transform: rotate(0);
+    transition: .5s;
+}
+.employment-box-item .icon:hover i{
+    transform: rotate(-360deg);
+}
+.time {
+	width: 100px;
+	height: 32px;
+	position: absolute;
+	top: 3px;
+	right: 35px;
+    overflow: hidden;
+    visibility: hidden;
+}
+.employment-box-item .icon:hover .time{
+    visibility: visible;
+}
+.time span{
+    background: #ec116c;
+    color: #fff;
+    padding: 5px 10px;
+    display: inline-block;
+    font-size: 14px;
+    transform: translateX(115%);
+    transition: .5s;
+}
+.employment-box-item .icon:hover span{
+    transform: translateX(15%);
+}
+.employment-box-item h2 {
+	font-size: 21px;
+	padding: 20px 30px 20px 0;
+	font-weight: 600;
+	color: #1d1f33;
+    display: inline-block;
+}
+.employment-box-item p{
+    font-size: 16px;
+    color: #808080;
+    line-height: 28px;
+}
+
+/* ========== AWARD CSS ========== */
+.award{
+    padding: 100px 0;
+    background: #fff;
+}
+.award-logo{   
+    margin-bottom: 50px; 
+}
+.award-logo img{
+    width: 200px;
+}
+.award-line-up img{
+    margin: 0 20px;
+    filter: grayscale(110%);
+    transition: .2s;
+}
+.award-line-up img:hover{
+    filter: grayscale(0);
+    cursor: no-drop;
+}
+.award-line-dn img{
+    margin: 0 20px;
+    filter: grayscale(110%);
+    transition: .2s;
+}
+.award-line-dn img:hover{
+    filter: grayscale(0);
+    cursor: no-drop;
+}
+/* ========== CTNTACT CSS ========== */
+.contact{
+}
+.contact h2{
+    font-weight: 400;
+}
+.contact h1{
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 55px;
+}
+.contact-box{
+    margin: 60px 0;
+    padding: 70px;
+    box-shadow: 0 0 50px 10px rgba(50, 67, 227, 0.1);
+}
+.contact-box-icon{
+    width: 33.3%;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.contact-box-icon span {
+	color: #52d8bb;
+	display: inline-block;
+	border: 1px solid #52d8bb;
+	border-radius: 50%;
+	font-size: 30px;
+	padding: 25px;
+	height: 90px;
+	width: 90px;
+	line-height: 45px;
+	text-align: center;
+    margin-bottom: 20px;
+}
+.contact-box-icon h3{
+    color: #6c6e85;
+    font-weight: 500;
+    margin-bottom: 9px;
+}
+.contact-box-icon:nth-child(2) span{
+    color: #3243e3;
+    border: 1px solid #3243e3;
+}
+.contact-box-icon:nth-child(3) span{
+    color: #ec116c;
+    border: 1px solid #ec116c;
+}
+/* CONTACT FORM */
+.form-left-input{
+    width: 48%;
+}
+.form-right-input{
+    width: 48%;
+}
+.contact-form .control-input{
+    width: 100%;
+    font-size: 20px;
+    border: 1px solid #ddd;
+    padding: 24px;
+    margin-bottom: 15px;
+}
+.contact-form .control-input:focus{
+    border: 1px solid #3243e3;
+    box-shadow: 0 0 20px 5px rgba(50, 67, 227, 0.3);
+}
+.form-btn {
+	color: #fff;
+	padding: 10px 50px;
+	font-size: 18px;
+	border: none;
+	background: #3243e3;
+    font-weight: 600;
+	margin-left: -80px;
+	margin-top: 25px;
+    transition: .4s;
+}
+.form-btn:hover{
+    box-shadow: 0 0 20px 5px rgba(50, 67, 227, 0.5);
+}
+/* ========== FOOTER CSS ========== */
+.footer{
+    padding: 50px 0 100px 0;
+    background: #fff;
+}
+.footer-icon{
+
+}
+.footer-icon span{
+    color: #6c6e85;
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    text-align: center;
+    display: inline-block;
+    border: 1px solid #6c6e85;
+    border-radius: 50px;
+    margin: 0 10px;
+    overflow: hidden;
+    transition: .3s;
+    cursor: pointer;
+}
+.footer-icon span i{
+    font-size: 20px;
+    transform: scale(1);
+    transition: .3s;
+}
+.footer-icon span:hover{
+    color: #52d8bb;
+    border: 1px solid #52d8bb;
+}
+.footer-icon span:hover i{
+    transform: scale(1.5);
+}
+.footer p{
+    margin-top: 30px;
+}
+.footer p span{
+    color: #fcc747;
+}
+.footer p .naim{
+    color: #0097e2;
+}
+
+/* @@@@@@@@@@ The End @@@@@@@@@@ */

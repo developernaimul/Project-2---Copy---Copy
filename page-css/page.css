@@ -1,0 +1,63 @@
+.header{
+    background: #ec116d;
+}
+.contact{
+    margin-top: 93px;
+    padding-top: 50px;
+}
+.contact h2{
+    margin-left: 535px;
+}
+.contact h1{
+    text-align: center;
+}
+.portfolio{
+    margin-top: 93px;
+    padding-top: 50px;
+}
+.portfolio h2{
+    margin-left: 535px;
+}
+.portfolio h1{
+    text-align: center;
+}
+.education {
+    margin-top: 93px;
+    padding-top: 50px;
+}
+.education h2.section_title{
+    margin-left: 535px;
+}
+.education h1{
+    text-align: center;
+}
+.about{
+    margin-top: 93px;
+    padding-top: 50px;
+}
+.education h2.section_title{
+    margin-left: 535px;
+}
+.education h1.section_text{
+    text-align: center;
+}
+.employment{
+    margin-top: 93px;
+    padding-top: 50px;
+}
+.employment h2.section_title{
+    margin-left: 535px;
+}
+.employment h1.section_text{
+    text-align: center;
+}
+.skill{
+    margin-top: 93px;
+    padding-top: 50px;
+}
+.skill h2.section_title{
+    margin-left: 535px;
+}
+.skill h1.section_text{
+    text-align: center;
+}
